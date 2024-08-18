@@ -1,3 +1,16 @@
+document.querySelectorAll('li').forEach(function(item) {
+  item.addEventListener('click', function() {
+      if (item.classList.contains('crossed')) {
+          item.classList.remove('crossed');
+          item.style.backgroundColor = '#b8c1ec'; // Revert to original background color
+      } else {
+          item.classList.add('crossed');
+          item.style.backgroundColor = '#fffffe'; // Keep the crossed-off background color
+      }
+  });
+});
+
+
 // Function to load the checklist state from localStorage
 function loadChecklistState() {
   const savedData = JSON.parse(localStorage.getItem("checklistData")) || {};

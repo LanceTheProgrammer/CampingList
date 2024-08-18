@@ -84,6 +84,9 @@ li.crossed {
     background-color: #fffffe; /* Secondary */
     color: #232946; /* Button text */
 }
+li.crossed:hover {
+    background-color: #fffffe;
+}
 
 button {
     background-color: #eebbc3; /* Button */
