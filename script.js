@@ -4,6 +4,12 @@ function loadChecklistState() {
   
   Object.keys(savedData).forEach((id) => {
     const ul = document.getElementById(id);
+    
+    // Clear existing items
+    while (ul.firstChild) {
+      ul.removeChild(ul.firstChild);
+    }
+
     savedData[id].items.forEach((itemData) => {
       const newLi = document.createElement("li");
       newLi.textContent = itemData.text;
