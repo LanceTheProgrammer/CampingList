@@ -1,12 +1,14 @@
 document.querySelectorAll('li').forEach(function(item) {
   item.addEventListener('click', function() {
-      if (item.classList.contains('crossed')) {
-          item.classList.remove('crossed');
-          item.style.backgroundColor = '#b8c1ec'; // Revert to original background color
-      } else {
-          item.classList.add('crossed');
-          item.style.backgroundColor = '#fffffe'; // Keep the crossed-off background color
-      }
+      setTimeout(function() {
+          if (item.classList.contains('crossed')) {
+              item.classList.remove('crossed');
+              item.style.backgroundColor = '#b8c1ec'; // Revert to original background color
+          } else {
+              item.classList.add('crossed');
+              item.style.backgroundColor = '#fffffe'; // Keep the crossed-off background color
+          }
+      }, 10); // Slight delay to ensure the CSS is applied after the click event
   });
 });
 

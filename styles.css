@@ -81,8 +81,11 @@ li:hover {
 
 li.crossed {
     text-decoration: line-through;
-    background-color: #fffffe; /* Secondary */
+    background-color: #fffffe !important; /* Secondary */
     color: #232946; /* Button text */
+}
+li:not(.crossed){
+    background-color: #b8c1ec;
 }
 li.crossed:hover {
     background-color: #fffffe;
