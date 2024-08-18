@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camping Checklist</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>8/25-8/27 Ohanapecosh Camping Checklist</h1>
+
+        <button id="uncheck-all">Uncheck All</button>
+
+        <div class="category">
+            <h2>Food Tools</h2>
+            <ul id="food-tools">
+                <li>Aluminum foil <button class="remove-item">Remove</button></li>
+                <li>Tongs <button class="remove-item">Remove</button></li>
+                <li>Knife and cutting board <button class="remove-item">Remove</button></li>
+                <li>Skewer <button class="remove-item">Remove</button></li>
+                <li>Cooler <button class="remove-item">Remove</button></li>
+                <li>Dry Ice <button class="remove-item">Remove</button></li>
+                <li>Cast iron skillet <button class="remove-item">Remove</button></li>
+                <li>Spatula <button class="remove-item">Remove</button></li>
+                <li>Mixing Bowl <button class="remove-item">Remove</button></li>
+                <li>Cleaning supplies <button class="remove-item">Remove</button></li>
+                <li>Coconut Oil <button class="remove-item">Remove</button></li>
+                <li>Oven Mitts <button class="remove-item">Remove</button></li>
+                <li>Table Cloth <button class="remove-item">Remove</button></li>
+                <li>Avocado Spray <button class="remove-item">Remove</button></li>
+                <li>Paper Plates <button class="remove-item">Remove</button></li>
+                <li>Dish soap <button class="remove-item">Remove</button></li>
+                <li>Grill Brush <button class="remove-item">Remove</button></li>
+                <li>Plastic Utensils <button class="remove-item">Remove</button></li>
+                <li>Camping Stove <button class="remove-item">Remove</button></li>
+                <li>Can Opener <button class="remove-item">Remove</button></li>
+                <li>Marshmallow Roasting Sticks <button class="remove-item">Remove</button></li>
+                <li>Ziplock Bags <button class="remove-item">Remove</button></li>
+                <li>Trash Bags <button class="remove-item">Remove</button></li>
+                <li>Paper Towels <button class="remove-item">Remove</button></li>
+                <li>Reusable Containers <button class="remove-item">Remove</button></li>
+                <li>Coffee Maker <button class="remove-item">Remove</button></li>
+                <li>Measuring Cups <button class="remove-item">Remove</button></li>
+                <li>Griddle <button class="remove-item">Remove</button></li>
+                <li>Portable Grill <button class="remove-item">Remove</button></li>
+                <li>Thermos <button class="remove-item">Remove</button></li>
+                <li>Roasting Pan <button class="remove-item">Remove</button></li>
+                <li>Butter Dish <button class="remove-item">Remove</button></li>
+                <li>Salt and Pepper Shakers <button class="remove-item">Remove</button></li>
+            </ul>
+            <input type="text" id="food-tools-input" placeholder="Add new item">
+            <button class="add-item" data-target="food-tools">Add Item</button>
+        </div>
+
+        <div class="category">
+            <h2>Day 1 (8/25)</h2>
+            <ul id="day-1">
+                <!-- Existing items will be dynamically loaded here -->
+            </ul>
+            <input type="text" id="day-1-input" placeholder="Add new item">
+            <button class="add-item" data-target="day-1">Add Item</button>
+        </div>
+
+        <div class="category">
+            <h2>Day 2 (8/26)</h2>
+            <ul id="day-2">
+                <!-- Existing items will be dynamically loaded here -->
+            </ul>
+            <input type="text" id="day-2-input" placeholder="Add new item">
+            <button class="add-item" data-target="day-2">Add Item</button>
+        </div>
+
+        <div class="category">
+            <h2>Day 3 (8/27)</h2>
+            <ul id="day-3">
+                <!-- Existing items will be dynamically loaded here -->
+            </ul>
+            <input type="text" id="day-3-input" placeholder="Add new item">
+            <button class="add-item" data-target="day-3">Add Item</button>
+        </div>
+
+        <div class="category">
+            <h2>Equipment</h2>
+            <ul id="equipment">
+                <li>Flashlight / Lanterns <button class="remove-item">Remove</button></li>
+                <li>Yoga Mat <button class="remove-item">Remove</button></li>
+                <li>Tent <button class="remove-item">Remove</button></li>
+                <li>Firewood / Fluid / Lighters <button class="remove-item">Remove</button></li>
+                <li>Sleeping Bags <button class="remove-item">Remove</button></li>
+                <li>Paper Towels <button class="remove-item">Remove</button></li>
+                <li>Air Mattress <button class="remove-item">Remove</button></li>
+                <li>Toilet Paper <button class="remove-item">Remove</button></li>
+                <li>Air Pump <button class="remove-item">Remove</button></li>
+                <li>Headphones <button class="remove-item">Remove</button></li>
+                <li>Sheets / Pillows <button class="remove-item">Remove</button></li>
+                <li>Sunglasses <button class="remove-item">Remove</button></li>
+                <li>Hammock <button class="remove-item">Remove</button></li>
+                <li>Hats <button class="remove-item">Remove</button></li>
+                <li>Books <button class="remove-item">Remove</button></li>
+                <li>Chairs <button class="remove-item">Remove</button></li>
+                <li>Mobile Battery <button class="remove-item">Remove</button></li>
+                <li>Change of Clothes x 2 <button class="remove-item">Remove</button></li>
+                <li>Bluetooth Speaker <button class="remove-item">Remove</button></li>
+                <li>Drinks: Wine/Beer/Rum/Soda/Water/Coconut Water <button class="remove-item">Remove</button></li>
+                <li>Cards or Games <button class="remove-item">Remove</button></li>
+                <li>Sun Block <button class="remove-item">Remove</button></li>
+                <li>Towels / Washcloths <button class="remove-item">Remove</button></li>
+                <li>First Aid Kit <button class="remove-item">Remove</button></li>
+                <li>Body Soap / Shampoo <button class="remove-item">Remove</button></li>
+                <li>Waterproof Phone Bags / Cases <button class="remove-item">Remove</button></li>
+                <li>Toothbrush <button class="remove-item">Remove</button></li>
+                <li>Water Shoes <button class="remove-item">Remove</button></li>
+                <li>Deodorant <button class="remove-item">Remove</button></li>
+                <li>Hiking Boots <button class="remove-item">Remove</button></li>
+                <li>Wet Wipes <button class="remove-item">Remove</button></li>
+                <li>Flip Flops (Camp Shoes) <button class="remove-item">Remove</button></li>
+                <li>Hand Sanitizer <button class="remove-item">Remove</button></li>
+                <li>Insect Repellent <button class="remove-item">Remove</button></li>
+                <li>J's <button class="remove-item">Remove</button></li>
+                <li>Dry Bag <button class="remove-item">Remove</button></li>
+                <li>Propane Grill <button class="remove-item">Remove</button></li>
+                <li>Swim Towels <button class="remove-item">Remove</button></li>
+                <li>Drawstring Day Bag <button class="remove-item">Remove</button></li>
+                <li>Water Cantines <button class="remove-item">Remove</button></li>
+                <li>Portable Water Filter <button class="remove-item">Remove</button></li>
+            </ul>
+            <input type="text" id="equipment-input" placeholder="Add new item">
+            <button class="add-item" data-target="equipment">Add Item</button>
+        </div>
+        
+
+        <div class="category">
+            <h2>Notes</h2>
+            <ul id="notes">
+                <!-- Existing items will be dynamically loaded here -->
+            </ul>
+            <input type="text" id="notes-input" placeholder="Add new item">
+            <button class="add-item" data-target="notes">Add Item</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
