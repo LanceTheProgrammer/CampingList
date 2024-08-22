@@ -1,3 +1,121 @@
+// Default items for each category
+const defaultItems = {
+  "food-tools": [
+    "Aluminum foil",
+    "Tongs",
+    "Knife and cutting board",
+    "Skewer",
+    "Cooler",
+    "Dry Ice",
+    "Cast iron skillet",
+    "Spatula",
+    "Mixing Bowl",
+    "Cleaning supplies",
+    "Coconut Oil",
+    "Oven Mitts",
+    "Table Cloth",
+    "Avocado Spray",
+    "Paper Plates",
+    "Dish soap",
+    "Grill Brush",
+    "Plastic Utensils",
+    "Camping Stove",
+    "Can Opener",
+    "Marshmallow Roasting Sticks",
+    "Ziplock Bags",
+    "Trash Bags",
+    "Paper Towels",
+    "Reusable Containers",
+    "Coffee Maker",
+    "Measuring Cups",
+    "Griddle",
+    "Portable Grill",
+    "Thermos",
+    "Roasting Pan",
+    "Butter Dish",
+    "Salt and Pepper Shakers"
+  ],
+  "day-1": [],
+  "day-2": [],
+  "day-3": [],
+  "equipment": [
+    "Flashlight / Lanterns",
+    "Yoga Mat",
+    "Tent",
+    "Firewood / Fluid / Lighters",
+    "Sleeping Bags",
+    "Paper Towels",
+    "Air Mattress",
+    "Toilet Paper",
+    "Air Pump",
+    "Headphones",
+    "Sheets / Pillows",
+    "Sunglasses",
+    "Hammock",
+    "Hats",
+    "Books",
+    "Chairs",
+    "Mobile Battery",
+    "Change of Clothes x 2",
+    "Bluetooth Speaker",
+    "Drinks: Wine/Beer/Rum/Soda/Water/Coconut Water",
+    "Cards or Games",
+    "Sun Block",
+    "Towels / Washcloths",
+    "First Aid Kit",
+    "Body Soap / Shampoo",
+    "Waterproof Phone Bags / Cases",
+    "Toothbrush",
+    "Water Shoes",
+    "Deodorant",
+    "Hiking Boots",
+    "Wet Wipes",
+    "Flip Flops (Camp Shoes)",
+    "Hand Sanitizer",
+    "Insect Repellent",
+    "J's",
+    "Dry Bag",
+    "Propane Grill",
+    "Swim Towels",
+    "Drawstring Day Bag",
+    "Water Cantines",
+    "Portable Water Filter"
+  ],
+  "notes": []
+};
+
+// Restore default items function
+function restoreDefaults() {
+  Object.keys(defaultItems).forEach((categoryId) => {
+    const ul = document.getElementById(categoryId);
+
+    // Clear existing items
+    while (ul.firstChild) {
+      ul.removeChild(ul.firstChild);
+    }
+
+    // Add default items
+    defaultItems[categoryId].forEach((item) => {
+      const newLi = document.createElement("li");
+      newLi.textContent = item;
+
+      // Create and append a remove button
+      const removeButton = document.createElement("button");
+      removeButton.textContent = "Remove";
+      removeButton.className = "remove-item";
+      newLi.appendChild(removeButton);
+
+      ul.appendChild(newLi);
+    });
+  });
+
+  // Save the restored default items to localStorage
+  saveChecklistState();
+}
+
+// Event listener for the "Restore Default Items" button
+document.getElementById("restore-defaults").addEventListener("click", restoreDefaults);
+
 // Event delegation for removing items
 document.addEventListener("click", (event) => {
   if (event.target.classList.contains("remove-item")) {

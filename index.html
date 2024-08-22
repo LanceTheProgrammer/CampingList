@@ -9,12 +9,13 @@
 </head>
 <body>
     <div class="container">
-        <h1>8/25-8/27 Ohanapecosh Camping Checklist</h1>
+        <h1>Camping Checklist</h1>
 
-        <button id="uncheck-all">Uncheck All</button>
+        <button id="uncheck-all">Uncross All</button>
+        
 
         <div class="category">
-            <h2>Food Tools</h2>
+            <h2>Meal Prep</h2>
             <ul id="food-tools">
                 <li>Aluminum foil <button class="remove-item">Remove</button></li>
                 <li>Tongs <button class="remove-item">Remove</button></li>
@@ -55,7 +56,7 @@
         </div>
 
         <div class="category">
-            <h2>Day 1 (8/25)</h2>
+            <h2>Day 1</h2>
             <ul id="day-1">
                 <!-- Existing items will be dynamically loaded here -->
             </ul>
@@ -64,7 +65,7 @@
         </div>
 
         <div class="category">
-            <h2>Day 2 (8/26)</h2>
+            <h2>Day 2</h2>
             <ul id="day-2">
                 <!-- Existing items will be dynamically loaded here -->
             </ul>
@@ -73,7 +74,7 @@
         </div>
 
         <div class="category">
-            <h2>Day 3 (8/27)</h2>
+            <h2>Day 3</h2>
             <ul id="day-3">
                 <!-- Existing items will be dynamically loaded here -->
             </ul>
@@ -82,7 +83,7 @@
         </div>
 
         <div class="category">
-            <h2>Equipment</h2>
+            <h2>Camping Gear</h2>
             <ul id="equipment">
                 <li>Flashlight / Lanterns <button class="remove-item">Remove</button></li>
                 <li>Yoga Mat <button class="remove-item">Remove</button></li>
@@ -139,7 +140,10 @@
             <input type="text" id="notes-input" placeholder="Add new item">
             <button class="add-item" data-target="notes">Add Item</button>
         </div>
+        <hr/>
+        <button id="restore-defaults">Restore Default Items</button>
     </div>
+
 
     <script src="script.js"></script>
 </body>
