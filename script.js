@@ -1,30 +1,45 @@
 // Function to toggle the 'crossed' class on click or touch
-function toggleItem(event) {
-  const item = event.target;
-  if (item.tagName === "LI" && !item.classList.contains("remove-item")) {
-    item.classList.toggle("crossed");
-    saveChecklistState();
+function toggleItem(item) {
+  if (item.classList.contains('crossed')) {
+    item.classList.remove('crossed');
+    item.style.backgroundColor = '#b8c1ec'; // Revert to original background color
+  } else {
+    item.classList.add('crossed');
+    item.style.backgroundColor = '#fffffe'; // Keep the crossed-off background color
   }
+  saveChecklistState(); // Save the updated state after toggle
 }
 
-// Function to remove the list item
-function removeItem(event) {
-  if (event.target.classList.contains("remove-item")) {
-    const li = event.target.parentElement;
-    li.remove();
-    saveChecklistState();
+// Event delegation to handle both clicks and touch events
+document.addEventListener("click", (event) => {
+  if (event.target.tagName === "LI") {
+    toggleItem(event.target);
   }
-}
-
-// Add event listeners for both click and touchstart events for the list items
-document.addEventListener("click", toggleItem);
-document.addEventListener("touchstart", (event) => {
-  toggleItem(event);
-  removeItem(event); // Ensure the remove button works on touchstart
 });
 
-// Event delegation for removing items using click
-document.addEventListener("click", removeItem);
+// Add event listener for touchstart on mobile devices
+document.addEventListener("touchstart", (event) => {
+  if (event.target.tagName === "LI") {
+    event.preventDefault(); // Prevent click event from firing immediately after
+    toggleItem(event.target);
+  }
+}, { passive: true });
+
+// Event delegation for removing items
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("remove-item")) {
+    const li = event.target.parentElement;
+
+    // Add the removing class to start the animation
+    li.classList.add("removing");
+
+    // Wait for the animation to finish before removing the item
+    setTimeout(() => {
+      li.remove();
+      saveChecklistState(); // Save the updated state
+    }, 500); // Match the duration of the animation (0.5s)
+  }
+});
 
 // Function to load the checklist state from localStorage
 function loadChecklistState() {
@@ -50,6 +65,9 @@ function loadChecklistState() {
 
       if (itemData.crossed) {
         newLi.classList.add("crossed");
+        newLi.style.backgroundColor = '#fffffe'; // Apply crossed-off background color
+      } else {
+        newLi.style.backgroundColor = '#b8c1ec'; // Apply default background color
       }
 
       ul.appendChild(newLi);
@@ -79,6 +97,7 @@ function saveChecklistState() {
 function uncheckAll() {
   document.querySelectorAll("li.crossed").forEach((item) => {
     item.classList.remove("crossed");
+    item.style.backgroundColor = '#b8c1ec'; // Revert to original background color
   });
   saveChecklistState();
 }
