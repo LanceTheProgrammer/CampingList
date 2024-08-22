@@ -1,3 +1,26 @@
+
+document.querySelectorAll('li').forEach(function(item) {
+  item.addEventListener('click', function() {
+      toggleItem(item);
+  });
+  item.addEventListener('touchstart', function(e) {
+      e.preventDefault(); // Prevent mouse events from being fired
+      toggleItem(item);
+  });
+});
+
+function toggleItem(item) {
+  if (item.classList.contains('crossed')) {
+    item.classList.remove('crossed');
+    item.style.backgroundColor = '#b8c1ec'; // Revert to original background color
+  } else {
+    item.classList.add('crossed');
+    item.style.backgroundColor = '#fffffe'; // Keep the crossed-off background color
+  }
+  saveChecklistState(); // Save the updated state after toggle
+}
+
+
 document.querySelectorAll('li').forEach(function(item) {
   item.addEventListener('click', function() {
       setTimeout(function() {
