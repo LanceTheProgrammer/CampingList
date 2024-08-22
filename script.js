@@ -1,40 +1,30 @@
-
-document.querySelectorAll('li').forEach(function(item) {
-  item.addEventListener('click', function() {
-      toggleItem(item);
-  });
-  item.addEventListener('touchstart', function(e) {
-      e.preventDefault(); // Prevent mouse events from being fired
-      toggleItem(item);
-  });
-});
-
-function toggleItem(item) {
-  if (item.classList.contains('crossed')) {
-    item.classList.remove('crossed');
-    item.style.backgroundColor = '#b8c1ec'; // Revert to original background color
-  } else {
-    item.classList.add('crossed');
-    item.style.backgroundColor = '#fffffe'; // Keep the crossed-off background color
+// Function to toggle the 'crossed' class on click or touch
+function toggleItem(event) {
+  const item = event.target;
+  if (item.tagName === "LI" && !item.classList.contains("remove-item")) {
+    item.classList.toggle("crossed");
+    saveChecklistState();
   }
-  saveChecklistState(); // Save the updated state after toggle
 }
 
+// Function to remove the list item
+function removeItem(event) {
+  if (event.target.classList.contains("remove-item")) {
+    const li = event.target.parentElement;
+    li.remove();
+    saveChecklistState();
+  }
+}
 
-document.querySelectorAll('li').forEach(function(item) {
-  item.addEventListener('click', function() {
-      setTimeout(function() {
-          if (item.classList.contains('crossed')) {
-              item.classList.remove('crossed');
-              item.style.backgroundColor = '#b8c1ec'; // Revert to original background color
-          } else {
-              item.classList.add('crossed');
-              item.style.backgroundColor = '#fffffe'; // Keep the crossed-off background color
-          }
-      }, 10); // Slight delay to ensure the CSS is applied after the click event
-  });
+// Add event listeners for both click and touchstart events for the list items
+document.addEventListener("click", toggleItem);
+document.addEventListener("touchstart", (event) => {
+  toggleItem(event);
+  removeItem(event); // Ensure the remove button works on touchstart
 });
 
+// Event delegation for removing items using click
+document.addEventListener("click", removeItem);
 
 // Function to load the checklist state from localStorage
 function loadChecklistState() {
@@ -85,14 +75,6 @@ function saveChecklistState() {
   localStorage.setItem("checklistData", JSON.stringify(checklistData));
 }
 
-// Function to toggle the 'crossed' class on click
-document.addEventListener("click", (event) => {
-  if (event.target.tagName === "LI") {
-    event.target.classList.toggle("crossed");
-    saveChecklistState();
-  }
-});
-
 // Function to uncheck all items
 function uncheckAll() {
   document.querySelectorAll("li.crossed").forEach((item) => {
@@ -128,15 +110,6 @@ function addNewItem(event) {
     saveChecklistState(); // Save state if needed
   }
 }
-
-// Event delegation for removing items
-document.addEventListener("click", (event) => {
-  if (event.target.classList.contains("remove-item")) {
-    const li = event.target.parentElement;
-    li.remove();
-    saveChecklistState(); // Save the updated state
-  }
-});
 
 // Function to handle Enter key press
 function handleKeyPress(event) {
