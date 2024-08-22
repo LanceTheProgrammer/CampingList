@@ -1,44 +1,35 @@
-// Function to toggle the 'crossed' class on click or touch
+// Event delegation for removing items
+document.addEventListener("click", (event) => {
+  if (event.target.classList.contains("remove-item")) {
+    const li = event.target.parentElement;
+    li.remove();
+    saveChecklistState(); // Save the updated state
+  }
+});
+
+// Function to toggle the 'crossed' class on list items
 function toggleItem(item) {
   if (item.classList.contains('crossed')) {
     item.classList.remove('crossed');
     item.style.backgroundColor = '#b8c1ec'; // Revert to original background color
   } else {
     item.classList.add('crossed');
-    item.style.backgroundColor = '#fffffe'; // Keep the crossed-off background color
+    item.style.backgroundColor = '#fffffe'; // Apply the crossed-off background color
   }
   saveChecklistState(); // Save the updated state after toggle
 }
 
-// Event delegation for both click and touch events
-document.addEventListener("click", (event) => {
-  if (event.target.tagName === "LI") {
-    toggleItem(event.target);
-  }
-});
+// Function to detect if the device is touch-enabled
+function isTouchDevice() {
+  return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+}
 
-document.addEventListener("touchend", (event) => {
+// Event delegation for click and touch events
+document.addEventListener(isTouchDevice() ? "touchend" : "click", (event) => {
   if (event.target.tagName === "LI") {
-    event.preventDefault(); // Prevent any default behavior that might interfere
     toggleItem(event.target);
   }
 }, { passive: true });
-
-// Event delegation for removing items
-document.addEventListener("click", (event) => {
-  if (event.target.classList.contains("remove-item")) {
-    const li = event.target.parentElement;
-
-    // Add the removing class to start the animation
-    li.classList.add("removing");
-
-    // Wait for the animation to finish before removing the item
-    setTimeout(() => {
-      li.remove();
-      saveChecklistState(); // Save the updated state
-    }, 500); // Match the duration of the animation (0.5s)
-  }
-});
 
 // Function to load the checklist state from localStorage
 function loadChecklistState() {
