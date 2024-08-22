@@ -10,17 +10,16 @@ function toggleItem(item) {
   saveChecklistState(); // Save the updated state after toggle
 }
 
-// Event delegation to handle both clicks and touch events
+// Event delegation for both click and touch events
 document.addEventListener("click", (event) => {
   if (event.target.tagName === "LI") {
     toggleItem(event.target);
   }
 });
 
-// Add event listener for touchstart on mobile devices
-document.addEventListener("touchstart", (event) => {
+document.addEventListener("touchend", (event) => {
   if (event.target.tagName === "LI") {
-    event.preventDefault(); // Prevent click event from firing immediately after
+    event.preventDefault(); // Prevent any default behavior that might interfere
     toggleItem(event.target);
   }
 }, { passive: true });
