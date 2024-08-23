@@ -105,6 +105,10 @@ function restoreDefaults() {
       removeButton.className = "remove-item";
       newLi.appendChild(removeButton);
 
+      // Apply default styles for new items
+      newLi.style.backgroundColor = '#b8c1ec'; // Set default background color
+      newLi.classList.add("item"); // Ensure item class for consistent styling
+
       ul.appendChild(newLi);
     });
   });
@@ -137,17 +141,16 @@ function toggleItem(item) {
   saveChecklistState(); // Save the updated state after toggle
 }
 
-// Function to detect if the device is touch-enabled
-function isTouchDevice() {
-  return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-}
-
 // Event delegation for click and touch events
-document.addEventListener(isTouchDevice() ? "touchend" : "click", (event) => {
+function handleItemToggle(event) {
   if (event.target.tagName === "LI") {
+    event.preventDefault(); // Prevent default touch actions
     toggleItem(event.target);
   }
-}, { passive: true });
+}
+
+document.addEventListener("click", handleItemToggle, { passive: false });
+document.addEventListener("touchend", handleItemToggle, { passive: false });
 
 // Function to load the checklist state from localStorage
 function loadChecklistState() {
@@ -171,12 +174,15 @@ function loadChecklistState() {
       removeButton.className = "remove-item";
       newLi.appendChild(removeButton);
 
+      // Apply styles based on item state
       if (itemData.crossed) {
         newLi.classList.add("crossed");
         newLi.style.backgroundColor = '#fffffe'; // Apply crossed-off background color
       } else {
         newLi.style.backgroundColor = '#b8c1ec'; // Apply default background color
       }
+
+      newLi.classList.add("item"); // Ensure item class for consistent styling
 
       ul.appendChild(newLi);
     });
@@ -231,6 +237,10 @@ function addNewItem(event) {
     removeButton.textContent = "Remove";
     removeButton.className = "remove-item";
     newLi.appendChild(removeButton);
+
+    // Apply default styles for new items
+    newLi.style.backgroundColor = '#b8c1ec'; // Set default background color
+    newLi.classList.add("item"); // Ensure item class for consistent styling
 
     ul.appendChild(newLi);
     input.value = ""; // Clear the input field

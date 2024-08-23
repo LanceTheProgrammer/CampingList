@@ -61,9 +61,6 @@ ul {
     margin: 0;
     list-style: none;
 }
-ul#equipment.list-items{
-    max-width: 350px;
-}
 
 /* Ensure consistent styling for all list items */
 .list-items li {
@@ -261,5 +258,6 @@ button:hover {
     ul#equipment.list-items li {
         font-size: 0.9em; /* Ensure consistent font size */
         padding: 8px 10px; /* Ensure consistent padding */
+        max-width: 300px;
     }
 }
