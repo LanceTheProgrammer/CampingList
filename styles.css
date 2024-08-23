@@ -231,6 +231,11 @@ button:hover {
     .category input[type="text"] {
         width: 100%;
     }
+    ul#food-tools.list-items li,
+    ul#equipment.list-items li {
+        font-size: 1em; /* Ensure consistent font size */
+        max-width: 90%; /* Ensure consistent max-width */
+    }
 }
 
 @media (max-width: 480px) {
@@ -251,5 +256,10 @@ button:hover {
     .container {
         padding: 10px;
         margin: 5px;
+    }
+    ul#food-tools.list-items li,
+    ul#equipment.list-items li {
+        font-size: 0.9em; /* Ensure consistent font size */
+        padding: 8px 10px; /* Ensure consistent padding */
     }
 }
