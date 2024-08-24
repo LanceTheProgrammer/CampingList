@@ -66,7 +66,7 @@ ul {
 .list-items li {
     background-color: #b8c1ec; /* Main */
     color: #232946; /* Button text */
-    max-width: 500px; /* Ensure a consistent maximum width */
+    max-width: 250px; /* Ensure a consistent maximum width */
     text-align: center;
     border: 2px solid #121629; /* Illustration Stroke */
     border-radius: 5px;
@@ -183,6 +183,7 @@ button:hover {
     color: #eebbc3; /* Tertiary */
 }
 
+
 /* Media Queries for smaller screens */
 @media (max-width: 1200px) {
     h1 {
@@ -193,7 +194,7 @@ button:hover {
     }
     .list-items li {
         font-size: 1.1em;
-        max-width: 90%;
+        max-width: 300px;
     }
     button, #uncheck-all {
         font-size: 0.9em;
@@ -214,7 +215,7 @@ button:hover {
     }
     .list-items li {
         font-size: 1em;
-        max-width: 100%;
+        max-width: 250px;
     }
     button, #uncheck-all {
         font-size: 0.8em;
@@ -231,7 +232,7 @@ button:hover {
     ul#food-tools.list-items li,
     ul#equipment.list-items li {
         font-size: 1em; /* Ensure consistent font size */
-        max-width: 90%; /* Ensure consistent max-width */
+        max-width: 250px; /* Ensure consistent max-width */
     }
 }
 
@@ -258,6 +259,6 @@ button:hover {
     ul#equipment.list-items li {
         font-size: 0.9em; /* Ensure consistent font size */
         padding: 8px 10px; /* Ensure consistent padding */
-        max-width: 300px;
+        max-width: 250px;
     }
 }
