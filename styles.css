@@ -68,6 +68,7 @@ ul {
     color: #232946; /* Button text */
     max-width: 250px; /* Ensure a consistent maximum width */
     text-align: center;
+    width: 200px;
     border: 2px solid #121629; /* Illustration Stroke */
     border-radius: 5px;
     padding: 10px 15px; /* Ensure consistent padding */
@@ -182,7 +183,16 @@ button:hover {
 .tertiary {
     color: #eebbc3; /* Tertiary */
 }
-
+ul#food-tools.list-items,
+    ul#equipment.list-items{
+        font-size: 1em; /* Ensure consistent font size */
+        max-width: 250px; /* Ensure consistent max-width */
+    }
+    #equipment li {
+        width: 250px;
+        max-width: 100%; /* Ensure it adapts to smaller screens */
+        box-sizing: border-box; /* Ensure padding doesn't affect width */
+    }
 
 /* Media Queries for smaller screens */
 @media (max-width: 1200px) {
@@ -193,8 +203,8 @@ button:hover {
         font-size: 1.25em;
     }
     .list-items li {
-        font-size: 1.1em;
-        max-width: 300px;
+        font-size: 1em; /* Reduced font size */
+        max-width: 220px; /* Reduced max-width */
     }
     button, #uncheck-all {
         font-size: 0.9em;
@@ -202,7 +212,13 @@ button:hover {
     }
     .category input[type="text"] {
         width: 90%;
-        max-width: 250px;
+        max-width: 220px; /* Adjusted max-width */
+    }
+    ul#food-tools.list-items li,
+    ul#equipment.list-items li {
+        font-size: 1em;
+        max-width: 220px; /* Adjusted max-width */
+        width: 220px;
     }
 }
 
@@ -214,8 +230,8 @@ button:hover {
         font-size: 1em;
     }
     .list-items li {
-        font-size: 1em;
-        max-width: 250px;
+        font-size: 0.9em; /* Further reduced font size */
+        max-width: 200px; /* Further reduced max-width */
     }
     button, #uncheck-all {
         font-size: 0.8em;
@@ -228,11 +244,12 @@ button:hover {
     }
     .category input[type="text"] {
         width: 100%;
+        max-width: 200px; /* Adjusted max-width */
     }
     ul#food-tools.list-items li,
     ul#equipment.list-items li {
-        font-size: 1em; /* Ensure consistent font size */
-        max-width: 250px; /* Ensure consistent max-width */
+        font-size: 0.9em;
+        max-width: 200px; /* Adjusted max-width */
     }
 }
 
@@ -244,8 +261,9 @@ button:hover {
         font-size: 0.875em;
     }
     .list-items li {
-        font-size: 0.9em;
-        padding: 8px 10px;
+        font-size: 0.8em; /* Further reduced font size */
+        padding: 6px 8px; /* Reduced padding */
+        max-width: 180px; /* Reduced max-width */
     }
     button, #uncheck-all {
         font-size: 0.7em;
@@ -255,10 +273,14 @@ button:hover {
         padding: 10px;
         margin: 5px;
     }
+    .category input[type="text"] {
+        width: 100%;
+        max-width: 180px; /* Adjusted max-width */
+    }
     ul#food-tools.list-items li,
     ul#equipment.list-items li {
-        font-size: 0.9em; /* Ensure consistent font size */
-        padding: 8px 10px; /* Ensure consistent padding */
-        max-width: 250px;
+        font-size: 0.8em;
+        padding: 6px 8px; /* Adjusted padding */
+        max-width: 180px; /* Adjusted max-width */
     }
 }
