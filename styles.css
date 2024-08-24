@@ -8,45 +8,36 @@ body {
     background-repeat: no-repeat;
 }
 
-h1, h2 {
+h1, h2, li, button, .remove-item, #uncheck-all {
     font-family: 'Cabin Sketch', Arial, sans-serif;
-}
-
-li {
-    font-family: 'Cabin Sketch', Arial, sans-serif;
-}
-
-/* General button and remove-item styling */
-button, .remove-item, #uncheck-all {
-    font-family: 'Cabin Sketch', cursive;
 }
 
 h1 {
-    color: #fffffe; /* Headline */
+    color: #fffffe;
     text-align: center;
     padding: 20px 0;
     font-size: 2.5em;
 }
 
 h2 {
-    color: #fffffe; /* Headline */
+    color: #fffffe;
     text-align: center;
     margin: 10px 0;
     font-size: 1.5em;
 }
 
 p {
-    color: #b8c1ec; /* Paragraph */
+    color: #b8c1ec;
 }
 
 .container {
     text-align: center;
-    background-color: rgba(35, 41, 70, 0.8); /* Semi-transparent Background */
+    background-color: rgba(35, 41, 70, 0.8);
     padding: 20px;
     border-radius: 8px;
     margin: 20px auto;
     max-width: 900px;
-    box-shadow: 0 4px 8px rgba(18, 22, 41, 0.2); /* Illustration Stroke */
+    box-shadow: 0 4px 8px rgba(18, 22, 41, 0.2);
 }
 
 .category {
@@ -62,27 +53,25 @@ ul {
     list-style: none;
 }
 
-/* Ensure consistent styling for all list items */
+/* Consistent styling for list items */
 .list-items li {
-    background-color: #b8c1ec; /* Main */
-    color: #232946; /* Button text */
-    max-width: 250px; /* Ensure a consistent maximum width */
-    text-align: center;
-    width: 200px;
-    border: 2px solid #121629; /* Illustration Stroke */
+    background-color: #b8c1ec;
+    color: #232946;
+    width: 250px;
+    max-width: 100%;
+    border: 2px solid #121629;
     border-radius: 5px;
-    padding: 10px 15px; /* Ensure consistent padding */
+    padding: 10px 15px;
     margin: 5px 0;
     cursor: pointer;
-    font-size: 1.2em; /* Ensure a consistent font size */
+    font-size: 1.2em;
     transition: background-color 0.3s;
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    box-sizing: border-box;
 }
 
-/* Uniform styling for the remove button within list items */
 .list-items li button.remove-item {
-    background-color: #eebbc3; /* Button */
-    color: #232946; /* Button text */
+    background-color: #eebbc3;
+    color: #232946;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -93,17 +82,17 @@ ul {
 }
 
 .list-items li button.remove-item:hover {
-    background-color: #b8c1ec; /* Main */
+    background-color: #b8c1ec;
 }
 
 .list-items li:hover {
-    background-color: #eebbc3; /* Highlight */
+    background-color: #eebbc3;
 }
 
 .list-items li.crossed {
     text-decoration: line-through;
-    background-color: #fffffe !important; /* Secondary */
-    color: #232946; /* Button text */
+    background-color: #fffffe !important;
+    color: #232946;
 }
 
 .list-items li:not(.crossed) {
@@ -115,8 +104,8 @@ ul {
 }
 
 button {
-    background-color: #eebbc3; /* Button */
-    color: #232946; /* Button text */
+    background-color: #eebbc3;
+    color: #232946;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
@@ -127,15 +116,15 @@ button {
 }
 
 button:hover {
-    background-color: #b8c1ec; /* Main */
+    background-color: #b8c1ec;
 }
 
 #uncheck-all {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: #eebbc3; /* Button */
-    color: #232946; /* Button text */
+    background-color: #eebbc3;
+    color: #232946;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -144,7 +133,7 @@ button:hover {
 }
 
 #uncheck-all:hover {
-    background-color: #b8c1ec; /* Main */
+    background-color: #b8c1ec;
 }
 
 .category input[type="text"] {
@@ -152,17 +141,17 @@ button:hover {
     padding: 8px;
     width: 80%;
     max-width: 300px;
-    border: 1px solid #121629; /* Illustration Stroke */
+    border: 1px solid #121629;
     border-radius: 4px;
-    background-color: #fffffe; /* Secondary */
-    color: #232946; /* Button text */
+    background-color: #fffffe;
+    color: #232946;
 }
 
 .category button.add-item {
     margin-top: 10px;
     padding: 8px 12px;
-    background-color: #eebbc3; /* Button */
-    color: #232946; /* Button text */
+    background-color: #eebbc3;
+    color: #232946;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -170,29 +159,28 @@ button:hover {
 }
 
 .category button.add-item:hover {
-    background-color: #b8c1ec; /* Main */
+    background-color: #b8c1ec;
 }
 
 .highlight {
-    background-color: #eebbc3; /* Highlight */
+    background-color: #eebbc3;
     padding: 5px;
     border-radius: 5px;
-    color: #232946; /* Button text */
+    color: #232946;
 }
 
 .tertiary {
-    color: #eebbc3; /* Tertiary */
+    color: #eebbc3;
 }
-ul#food-tools.list-items,
-    ul#equipment.list-items{
-        font-size: 1em; /* Ensure consistent font size */
-        max-width: 250px; /* Ensure consistent max-width */
-    }
-    #equipment li {
-        width: 250px;
-        max-width: 100%; /* Ensure it adapts to smaller screens */
-        box-sizing: border-box; /* Ensure padding doesn't affect width */
-    }
+
+/* Consistent styling for both lists */
+ul#food-tools.list-items li,
+ul#equipment.list-items li {
+    font-size: 1em;
+    width: 250px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
 
 /* Media Queries for smaller screens */
 @media (max-width: 1200px) {
@@ -203,8 +191,8 @@ ul#food-tools.list-items,
         font-size: 1.25em;
     }
     .list-items li {
-        font-size: 1em; /* Reduced font size */
-        max-width: 220px; /* Reduced max-width */
+        font-size: 1em;
+        max-width: 220px;
     }
     button, #uncheck-all {
         font-size: 0.9em;
@@ -212,12 +200,12 @@ ul#food-tools.list-items,
     }
     .category input[type="text"] {
         width: 90%;
-        max-width: 220px; /* Adjusted max-width */
+        max-width: 220px;
     }
     ul#food-tools.list-items li,
     ul#equipment.list-items li {
         font-size: 1em;
-        max-width: 220px; /* Adjusted max-width */
+        max-width: 220px;
         width: 220px;
     }
 }
@@ -230,8 +218,8 @@ ul#food-tools.list-items,
         font-size: 1em;
     }
     .list-items li {
-        font-size: 0.9em; /* Further reduced font size */
-        max-width: 200px; /* Further reduced max-width */
+        font-size: 0.9em;
+        max-width: 200px;
     }
     button, #uncheck-all {
         font-size: 0.8em;
@@ -244,12 +232,12 @@ ul#food-tools.list-items,
     }
     .category input[type="text"] {
         width: 100%;
-        max-width: 200px; /* Adjusted max-width */
+        max-width: 200px;
     }
     ul#food-tools.list-items li,
     ul#equipment.list-items li {
         font-size: 0.9em;
-        max-width: 200px; /* Adjusted max-width */
+        max-width: 200px;
     }
 }
 
@@ -261,9 +249,9 @@ ul#food-tools.list-items,
         font-size: 0.875em;
     }
     .list-items li {
-        font-size: 0.8em; /* Further reduced font size */
-        padding: 6px 8px; /* Reduced padding */
-        max-width: 180px; /* Reduced max-width */
+        font-size: 0.8em;
+        padding: 6px 8px;
+        max-width: 180px;
     }
     button, #uncheck-all {
         font-size: 0.7em;
@@ -275,12 +263,12 @@ ul#food-tools.list-items,
     }
     .category input[type="text"] {
         width: 100%;
-        max-width: 180px; /* Adjusted max-width */
+        max-width: 180px;
     }
     ul#food-tools.list-items li,
     ul#equipment.list-items li {
         font-size: 0.8em;
-        padding: 6px 8px; /* Adjusted padding */
-        max-width: 180px; /* Adjusted max-width */
+        padding: 6px 8px;
+        max-width: 180px;
     }
 }
