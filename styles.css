@@ -178,9 +178,22 @@ ul#food-tools.list-items li,
 ul#equipment.list-items li {
     font-size: 1em;
     width: 250px;
-    max-width: 100%;
+    max-width: 80%;
     box-sizing: border-box;
 }
+
+ul#equipment .list-items li .item{
+    font-size: 1em;
+    width: 250px;
+    max-width: 80%;
+    box-sizing: border-box;
+}
+#equipment .item {
+    padding: 10px; /* Add padding inside the list item */
+    margin: 5px; /* Add margin around the list item */
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+    background-color: #b8c1ec; /* Default background color */
+  }
 
 /* Media Queries for smaller screens */
 @media (max-width: 1200px) {
@@ -240,6 +253,14 @@ ul#equipment.list-items li {
         max-width: 200px;
     }
 }
+
+@media (max-width: 600px) {
+    #equipment .item {
+      width: calc(100% - 20px); /* Ensure the item doesn't touch screen edges */
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 
 @media (max-width: 480px) {
     h1 {

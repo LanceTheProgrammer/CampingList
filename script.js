@@ -107,7 +107,7 @@ function restoreDefaults() {
 
       // Apply default styles for new items
       newLi.style.backgroundColor = '#b8c1ec'; // Set default background color
-      newLi.classList.add("item"); // Ensure item class for consistent styling
+      newLi.classList.add("list-items"); // Ensure item class for consistent styling
 
       ul.appendChild(newLi);
     });
